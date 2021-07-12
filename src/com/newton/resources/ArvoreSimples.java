@@ -133,7 +133,6 @@ public class ArvoreSimples {
             No node = (No)(nodes.next());
 
             if (wanted_node == node.element()) {
-                System.out.println(wanted_node + " - " + node.element());
                 return node;
             }
 

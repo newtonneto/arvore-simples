@@ -41,7 +41,6 @@ public class Main {
 
         //Procura por um nó especifico
         No find_it_node_4 = simples.findNode(simples.root(), 13);
-        System.out.println("Mo> " + find_it_node_4);
         if (find_it_node_4 != null) {
             //Verifica o pai do no encontrado
             No parent = find_it_node_4.parent();
@@ -50,6 +49,6 @@ public class Main {
 
 
         //Imprime todos os nos
-        //simples.printNodes(simples.root());
+        simples.printNodes(simples.root());
     }
 }
