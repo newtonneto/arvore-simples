@@ -32,7 +32,7 @@ public class Main {
         }
 
         //Procura por um nó especifico
-        No find_it_node_3 = simples.findNode(simples.root(), 14);
+        No find_it_node_3 = simples.findNode(simples.root(), 12);
         if (find_it_node_3 != null) {
             //Verifica o pai do no encontrado
             No parent = find_it_node_3.parent();
@@ -40,20 +40,21 @@ public class Main {
         }
 
         //Procura por um nó especifico
-        No find_it_node_4 = simples.findNode(simples.root(), 13);
+        No find_it_node_4 = simples.findNode(simples.root(), 15);
         if (find_it_node_4 != null) {
             //Verifica o pai do no encontrado
             No parent = find_it_node_4.parent();
             System.out.println("O pai do nó " + find_it_node_4.element() + ": " + parent.element());
         }
 
-
+        System.out.println("");
         //Imprime todos os nos
         simples.printNodes(simples.root());
 
         //Recebe todos os nos
         Iterator all_nodes = simples.Nos();
 
+        System.out.println("");
         //Exibe os nos recebidos
         while (all_nodes.hasNext()) {
             System.out.println("No: " + all_nodes.next());
@@ -62,9 +63,36 @@ public class Main {
         //Recebe todos os elementos
         Iterator all_elements = simples.elements();
 
+        System.out.println("");
         //Exibe os elementos recebidos
         while (all_elements.hasNext()) {
             System.out.println("Elemento: " + all_elements.next());
         }
+
+        System.out.println("");
+        //Exibe o valor de dois nós
+        System.out.println("Nó 1: " + find_it_node_3.element() + "\nNó 2: " + find_it_node_4.element());
+        //Exibe os elementos dos pais desses nós
+        System.out.println("Pai do nó 1: " + find_it_node_3.parent().element() + "\nPai do nó 2: " + find_it_node_4.parent().element());
+
+        //Troca os elementos (objetos) dos dois nos exibidos
+        simples.swapElements(find_it_node_3, find_it_node_4);
+
+        //Exibe o valor de dois nós, agora com os elementos trocados
+        System.out.println("No 1: " + find_it_node_3.element() + "\nNo 2: " + find_it_node_4.element());
+        //Exibe os elementos dos pais desses nós
+        System.out.println("Pai do nó 1: " + find_it_node_3.parent().element() + "\nPai do nó 2: " + find_it_node_4.parent().element());
+
+        System.out.println("");
+        //Exibe a altura da árvore
+        System.out.println("Altura da árvore: " + simples.height(simples.root()));
+
+        //Adiciona nos na altura 3
+        simples.addChild(find_it_node_4, 22);
+        simples.addChild(find_it_node_4, 23);
+
+        System.out.println("");
+        //Exibe a nova altura da árvore
+        System.out.println("Altura da árvore: " + simples.height(simples.root()));
     }
 }

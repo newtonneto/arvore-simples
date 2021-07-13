@@ -73,6 +73,10 @@ public class ArvoreSimples {
          * e fazer com que o objeto que estava na posição w
          * fique na posição v
          */
+
+        //O replace irá colocar o Objeto de w em v, e retornar o antigo objeto de v, que será colocado
+        //em w
+        w.setElement(replace(v, w.element()));
     }
 
     /** Retorna a profundidade de um Nó */
@@ -89,10 +93,19 @@ public class ArvoreSimples {
     }
 
     /** Retorna a altura da árvore */
-    public int height() {
-        // Método que serve de exercicio
-        int altura = 0;
-        return altura;
+    public int height(No node) {
+        if (this.isExternal(node)) {
+            return 0;
+        }
+
+        int tree_height = 0;
+        Iterator childrens = this.children(node);
+
+        while(childrens.hasNext()) {
+            tree_height = Math.max(tree_height, height((No)childrens.next()));
+        }
+
+        return 1 + tree_height;
     }
 
     /** Retorna um iterator com os elementos armazenados na árvore */
@@ -165,8 +178,12 @@ public class ArvoreSimples {
     }
 
     public Object replace(No v, Object o) {
-        // Método que serve de exercicio
-        return null;
+        //Salva o objeto que será substituido
+        Object swappable_element = v.element();
+        //Armazena no nó o seu novo objeto
+        v.setElement(o);
+
+        return swappable_element;
     }
 
     //Procura por um nó especifico na árvore, com exceção da raiz
