@@ -50,5 +50,21 @@ public class Main {
 
         //Imprime todos os nos
         simples.printNodes(simples.root());
+
+        //Recebe todos os nos
+        Iterator all_nodes = simples.Nos();
+
+        //Exibe os nos recebidos
+        while (all_nodes.hasNext()) {
+            System.out.println("No: " + all_nodes.next());
+        }
+
+        //Recebe todos os elementos
+        Iterator all_elements = simples.elements();
+
+        //Exibe os elementos recebidos
+        while (all_elements.hasNext()) {
+            System.out.println("Elemento: " + all_elements.next());
+        }
     }
 }
